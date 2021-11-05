@@ -51,7 +51,6 @@ public class GraphDisplay extends JPanel implements MouseMotionListener, MouseLi
         description = "";
 
         setBackground(Color.white);
-        set
         Dimension d = new Dimension(width, height);
         setPreferredSize(d);
     }
