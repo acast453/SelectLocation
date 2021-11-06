@@ -23,7 +23,7 @@ public class GraphDisplay extends JPanel implements MouseMotionListener, MouseLi
     Point begin; //initial point of the selection rectangle
     Rectangle selectionRectangle; //rectangle that the user draws dynamically
     private BufferedImage image;
-    String description;
+
 
     /**
      * Parameterized constructor.
@@ -37,22 +37,19 @@ public class GraphDisplay extends JPanel implements MouseMotionListener, MouseLi
         addMouseMotionListener(this);
         addMouseListener(this);
 
-
+        setBackground(Color.white);
+        Dimension d = new Dimension(width, height);
+        setPreferredSize(d);
         try
         {
             image = ImageIO.read(new File("src/fiu map.png"));
-            System.out.println("Found");
         }
         catch (IOException ex)
         {
             System.out.println("Image file not found!");
         }
 
-        description = "";
 
-        setBackground(Color.white);
-        Dimension d = new Dimension(width, height);
-        setPreferredSize(d);
     }
 
     @Override
@@ -125,6 +122,9 @@ public class GraphDisplay extends JPanel implements MouseMotionListener, MouseLi
     public void paint(Graphics g)
     {
         super.paint(g); //clears window
+
+       Dimension d = getSize();
+       g.drawImage(image, 0,0,d.width,d.height,this);
 
         //draws geometric objects
         if (selectionRectangle != null)

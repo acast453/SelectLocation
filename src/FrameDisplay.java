@@ -21,7 +21,7 @@ public class FrameDisplay extends JFrame
      */
     public FrameDisplay(int width, int height, GeometricObject[] g)
     {
-        setTitle("Selection of Points");
+        setTitle("Selection of Points on Interactive Map");
         setSize(width, height);
         //setResizable(false);
 

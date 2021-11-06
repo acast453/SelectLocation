@@ -26,7 +26,7 @@ public class K2Tree
 
     public void add(Point p)
     {
-        root.setLeftChild(add(p, root.getLeftChild(), "even"));
+        root.setLeftChild(add(p, root.getLeftChild(), "even`    `"));
     }
 
     public boolean isEmpty()
